@@ -1,0 +1,53 @@
+!!!
+%html
+  %head
+    %title
+      Wonderful dishes for your salt formulas
+    %meta{name: "viewport", content: "width: device-width, initial-scale: 1.0"}
+    %link{href: "{{ STATIC_URL }}css/bootstrap.min.css", rel: "stylesheet"}
+
+    :css
+      body {
+        padding-top: 50px;
+      }
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+  %body
+    .navbar.navbar-inverse.navbar-fixed-top{role: "navigation"}
+      .container
+        .navbar-header
+          %button.navbar-toggle{type: "button", data-toggle: "collapse", data-target: ".navbar-collapse"}
+            %span{class: "sr-only"}
+              Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{href: "{% url 'home' %}"}
+            Dishes
+        .collapse.navbar-collapse
+          %ul{class: "nav navbar-nav"}
+            %li.active
+              %a{href: "{% url 'home' %}"}
+                Home
+            %li
+              %a{href: "#about"}
+                About
+
+    .container
+        .alert.alert-info.alert-dismissable{style: "margin-top: 20px"}
+          %button.close{type: "button", data-dismiss: "alert", aria-hidden: "true"}
+            &times;
+          %b Dishes
+          is a experimantal to build a central repository of salt formulas to use with <a href="https://github.com/Psycojoker/cellar">cellar</a>
+        %h1
+          Dishes
+          %small wonderful formulas for your salt
+        %hr
+        -block content
+    %script{src: "{{ STATIC_URL }}js/jquery-1.10.2.min.js"}
+    %script{src: "{{ STATIC_URL }}js/bootstrap.min.js"}
