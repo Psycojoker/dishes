@@ -37,6 +37,9 @@
             %li
               %a{href: "#about"}
                 About
+          %form.navbar-form.navbar-right{action:  "{% url 'social:begin' 'github' %}"}
+            %button.btn.btn-info{type: "submit"}
+              Login with github
 
     .container
         .alert.alert-info.alert-dismissable{style: "margin-top: 20px"}
